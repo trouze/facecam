@@ -38,8 +38,8 @@ curl -fsSL https://raw.githubusercontent.com/trouze/facecam/main/install.sh | IN
 prefer doing it by hand?
 
 ```bash
-curl -fsSL -o /tmp/FaceCam.app.zip https://github.com/trouze/facecam/releases/latest/download/FaceCam.app.zip
-unzip -q -o /tmp/FaceCam.app.zip -d /tmp && cp -R /tmp/FaceCam.app /Applications/
+curl -fsSL -o /tmp/facecam.app.zip https://github.com/trouze/facecam/releases/latest/download/FaceCam.app.zip
+unzip -q -o /tmp/facecam.app.zip -d /tmp && cp -R /tmp/facecam.app /Applications/
 ```
 
 there is no auto-updating functionality, to update just re-run the install command — it replaces the old version:
@@ -57,15 +57,15 @@ requires macOS 13+, a camera, and rust (`rustup`).
 
 ```bash
 ./build.sh --release
-cp -r target/release/FaceCam.app /Applications/
+cp -r target/release/facecam.app /Applications/
 ```
 
-`build.sh` compiles the binary, assembles `FaceCam.app` (with the camera usage description required by TCC), and ad-hoc signs it.
+`build.sh` compiles the binary, assembles `facecam.app` (with the camera usage description required by TCC), and ad-hoc signs it.
 
 ## run
 
 ```bash
-open target/release/FaceCam.app
+open target/release/facecam.app
 ```
 
 grant camera access when prompted, then drag the bubble wherever you want. start your screen recording (cmd + shift + 5) and your face gets captured along with everything else.
