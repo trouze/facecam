@@ -9,10 +9,10 @@ use objc2_foundation::{ns_string, NSPoint, NSRect, NSSize};
 mod camera;
 
 const BUBBLE_SIZE: f64 = 200.0;
-const APP_NAME: &str = "FaceCam";
+const APP_NAME: &str = "facecam";
 
 fn main() {
-    let mtm = MainThreadMarker::new().expect("FaceCam must run on the main thread");
+    let mtm = MainThreadMarker::new().expect("facecam must run on the main thread");
 
     let app = NSApplication::sharedApplication(mtm);
     app.setActivationPolicy(NSApplicationActivationPolicy::Regular);
@@ -71,7 +71,7 @@ fn build_menu_bar(mtm: MainThreadMarker) -> Retained<NSMenu> {
     let hide_item = unsafe {
         NSMenuItem::initWithTitle_action_keyEquivalent(
             NSMenuItem::alloc(mtm),
-            ns_string!("Hide FaceCam"),
+            ns_string!("Hide facecam"),
             Some(sel!(hide:)),
             ns_string!("h"),
         )
@@ -82,7 +82,7 @@ fn build_menu_bar(mtm: MainThreadMarker) -> Retained<NSMenu> {
     let quit_item = unsafe {
         NSMenuItem::initWithTitle_action_keyEquivalent(
             NSMenuItem::alloc(mtm),
-            ns_string!("Quit FaceCam"),
+            ns_string!("Quit facecam"),
             Some(sel!(terminate:)),
             ns_string!("q"),
         )

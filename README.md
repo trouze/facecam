@@ -1,31 +1,28 @@
 # facecam
 
-Tiny macOS app for floating your webcam feed on your desktop to capture in screen recordings.
-
-A native Rust clone of [CamBubble](https://github.com/backnotprop/CamBubble): a circular webcam bubble that floats above everything — no menubar, no chrome, just your face in a draggable circle, always on top.
+tiny macOS app for floating your webcam feed on your desktop to capture in screen recordings. small, minimal, fast, and written in rust.
 
 ## Why
 
-You want to record a demo or walkthrough with QuickTime (or any screen recorder) and show your face too — but you don't want to buy software. Open FaceCam, start your screen recording, done.
+You want to record a demo or walkthrough with macOS' native screen recorder (cmd+shift+5) and skip the bloat of products like Loom. open facecam, start your screen recording, done.
 
 ## Features
 
-- 200×200 circular webcam bubble, floating window level, always on top
-- Resizable: drag inside the circle to move, drag the corner gaps to resize (100–600 px); a ring appears on hover so the grips are visible. Stays a perfect circle at any size
-- Aspect-fill preview with mirroring (like a real mirror)
-- Center Stage disabled so the camera uses its full wide field of view
-- Right-click the bubble → **Quit FaceCam**, or Cmd+Q
-- Pure Rust via `objc2` bindings to AppKit/AVFoundation — no WebView, no Electron
+- displays your webcam feed on desktop in a bubble
+- is a 360kb binary
+- pure rust via `objc2` bindings to appkit/avfoundation. no webview, no electron
+- resizable
+
 
 ## Install
 
-Install the latest release straight from your terminal (Apple Silicon + Intel):
+install the latest release straight from your terminal (Apple Silicon + Intel):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/trouze/facecam/main/install.sh | sh
 ```
 
-That downloads the latest `FaceCam.app` from GitHub Releases and puts it in `/Applications`. To install elsewhere:
+That downloads the latest `facecam.app` from GitHub Releases and puts it in `/Applications`. To install elsewhere:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/trouze/facecam/main/install.sh | INSTALL_DIR="$HOME/Applications" sh
@@ -38,11 +35,18 @@ curl -fsSL -o /tmp/FaceCam.app.zip https://github.com/trouze/facecam/releases/la
 unzip -q -o /tmp/FaceCam.app.zip -d /tmp && cp -R /tmp/FaceCam.app /Applications/
 ```
 
-New releases are published automatically: pushing a tag like `v0.1.1` runs the GitHub Action that builds a universal binary and attaches it to the release.
+there is no auto-updating functionality, to update just re-run the install command — it replaces the old version:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/trouze/facecam/main/install.sh | sh
+```
+
+or if facecam is running, quit it first (right-click the bubble → quit facecam, or `pkill -x facecam`).
+
 
 ## Build
 
-Requires macOS 13+, a camera, and Rust (`rustup`).
+requires macOS 13+, a camera, and rust (`rustup`).
 
 ```bash
 ./build.sh --release
@@ -57,7 +61,7 @@ cp -r target/release/FaceCam.app /Applications/
 open target/release/FaceCam.app
 ```
 
-Grant camera access when prompted, then drag the bubble wherever you want. Start your QuickTime screen recording and your face gets captured along with everything else.
+grant camera access when prompted, then drag the bubble wherever you want. start your screen recording (cmd + shift + 5) and your face gets captured along with everything else.
 
 ## License
 

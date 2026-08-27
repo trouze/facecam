@@ -1,5 +1,5 @@
 #!/bin/sh
-# Builds FaceCam.app.
+# Builds facecam.app.
 #   ./build.sh                    debug build (arm64)
 #   ./build.sh --release          release build (native arch)
 #   ./build.sh --release --universal  release universal binary (arm64 + x86_64)
@@ -16,7 +16,7 @@ for arg in "$@"; do
     esac
 done
 
-APP_NAME=FaceCam
+APP_NAME=facecam
 
 if [ "$UNIVERSAL" = 1 ]; then
     [ "$MODE" = "release" ] || { echo "--universal requires --release" >&2; exit 2; }
@@ -38,7 +38,7 @@ else
     OUT="target/$MODE/facecam"
 fi
 
-BUNDLE="target/$MODE/FaceCam.app"
+BUNDLE="target/$MODE/facecam.app"
 
 rm -rf "$BUNDLE"
 mkdir -p "$BUNDLE/Contents/MacOS"

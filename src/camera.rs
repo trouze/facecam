@@ -238,7 +238,7 @@ impl BubbleView {
 ///
 /// Mirrors CamBubble's `CameraView`: an aspect-fill, mirrored
 /// `AVCaptureVideoPreviewLayer` clipped to a circle, with a right-click
-/// "Quit FaceCam" menu. Extends it with custom hit-testing (circle moves the
+/// "Quit facecam" menu. Extends it with custom hit-testing (circle moves the
 /// bubble, corner gaps resize it) plus a visible feedback ring.
 pub fn camera_bubble_view(mtm: MainThreadMarker) -> Retained<BubbleView> {
     let session: Retained<AVCaptureSession> =
@@ -350,7 +350,7 @@ fn attach_quit_menu(mtm: MainThreadMarker, view: &NSView) {
     let quit_item = unsafe {
         NSMenuItem::initWithTitle_action_keyEquivalent(
             NSMenuItem::alloc(mtm),
-            ns_string!("Quit FaceCam"),
+            ns_string!("Quit facecam"),
             Some(sel!(terminate:)),
             ns_string!("q"),
         )
