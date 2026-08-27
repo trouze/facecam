@@ -48,7 +48,6 @@ fn build_window(mtm: MainThreadMarker) -> Retained<NSWindow> {
         window.setBackgroundColor(Some(&NSColor::clearColor()));
         window.setHasShadow(true);
         window.setLevel(NSFloatingWindowLevel);
-        window.setMovableByWindowBackground(true);
 
         window
     }

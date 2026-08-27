@@ -16,9 +16,12 @@ objc2-app-kit = { version = "0.3", features = [
     "NSMenuItem",
     "NSResponder",
     "NSScreen",
+    "NSTrackingArea",
     "NSView",
     "NSWindow",
+    "objc2-core-graphics",
 ] }
+objc2-core-graphics = "0.3"
 objc2-av-foundation = { version = "0.3", features = [
     "AVAnimation",
     "AVCaptureDevice",
@@ -27,7 +30,7 @@ objc2-av-foundation = { version = "0.3", features = [
     "AVCaptureSessionPreset",
     "AVMediaFormat",
 ] }
-objc2-quartz-core = { version = "0.3", features = ["CALayer"] }
+objc2-quartz-core = { version = "0.3", features = ["CALayer", "CATransaction", "objc2-core-graphics"] }
 
 [profile.release]
 lto = true

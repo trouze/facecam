@@ -11,9 +11,9 @@ You want to record a demo or walkthrough with QuickTime (or any screen recorder)
 ## Features
 
 - 200×200 circular webcam bubble, floating window level, always on top
+- Resizable: drag inside the circle to move, drag the corner gaps to resize (100–600 px); a ring appears on hover so the grips are visible. Stays a perfect circle at any size
 - Aspect-fill preview with mirroring (like a real mirror)
 - Center Stage disabled so the camera uses its full wide field of view
-- Drag the bubble anywhere (`movableByWindowBackground`)
 - Right-click the bubble → **Quit FaceCam**, or Cmd+Q
 - Pure Rust via `objc2` bindings to AppKit/AVFoundation — no WebView, no Electron
 
