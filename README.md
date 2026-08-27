@@ -2,11 +2,11 @@
 
 tiny macOS app for floating your webcam feed on your desktop to capture in screen recordings. small, minimal, fast, and written in rust.
 
-## Why
+## why
 
-You want to record a demo or walkthrough with macOS' native screen recorder (cmd+shift+5) and skip the bloat of products like Loom. open facecam, start your screen recording, done.
+you want to record a demo or walkthrough with macOS' native screen recorder (cmd+shift+5) and skip the bloat of products like Loom. open facecam, start your screen recording, done.
 
-## Features
+## features
 
 - displays your webcam feed on desktop in a bubble
 - is a 360kb binary
@@ -14,21 +14,21 @@ You want to record a demo or walkthrough with macOS' native screen recorder (cmd
 - resizable
 
 
-## Install
+## install
 
-install the latest release straight from your terminal (Apple Silicon + Intel):
+install the latest release straight from your terminal (apple silicon + intel):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/trouze/facecam/main/install.sh | sh
 ```
 
-That downloads the latest `facecam.app` from GitHub Releases and puts it in `/Applications`. To install elsewhere:
+that downloads the latest `facecam.app` from gitHub releases and puts it in `/Applications`. to install elsewhere:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/trouze/facecam/main/install.sh | INSTALL_DIR="$HOME/Applications" sh
 ```
 
-Prefer doing it by hand?
+prefer doing it by hand?
 
 ```bash
 curl -fsSL -o /tmp/FaceCam.app.zip https://github.com/trouze/facecam/releases/latest/download/FaceCam.app.zip
@@ -44,7 +44,7 @@ curl -fsSL https://raw.githubusercontent.com/trouze/facecam/main/install.sh | sh
 or if facecam is running, quit it first (right-click the bubble → quit facecam, or `pkill -x facecam`).
 
 
-## Build
+## build
 
 requires macOS 13+, a camera, and rust (`rustup`).
 
@@ -55,7 +55,7 @@ cp -r target/release/FaceCam.app /Applications/
 
 `build.sh` compiles the binary, assembles `FaceCam.app` (with the camera usage description required by TCC), and ad-hoc signs it.
 
-## Run
+## run
 
 ```bash
 open target/release/FaceCam.app
@@ -63,6 +63,6 @@ open target/release/FaceCam.app
 
 grant camera access when prompted, then drag the bubble wherever you want. start your screen recording (cmd + shift + 5) and your face gets captured along with everything else.
 
-## License
+## license
 
 MIT
