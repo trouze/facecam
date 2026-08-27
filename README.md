@@ -1,5 +1,12 @@
 # facecam
 
+[![release](https://img.shields.io/github/v/release/trouze/facecam?label=release)](https://github.com/trouze/facecam/releases)
+[![build](https://img.shields.io/github/actions/workflow/status/trouze/facecam/release.yml?label=build)](https://github.com/trouze/facecam/actions/workflows/release.yml)
+[![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/trouze/facecam)
+[![rust](https://img.shields.io/badge/rust-2021-orange)](https://www.rust-lang.org)
+[![platform](https://img.shields.io/badge/platform-macOS-lightgrey)](https://www.apple.com/macos)
+[![size](https://img.shields.io/badge/binary-~360KB-success)](https://github.com/trouze/facecam/releases)
+
 tiny macOS app for floating your webcam feed on your desktop to capture in screen recordings. small, minimal, fast, and written in rust.
 
 ## why
